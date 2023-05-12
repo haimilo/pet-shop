@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 import SearchIcon from '@mui/icons-material/Search';
@@ -24,9 +24,32 @@ const navTab = [
 
 const Header = () => {
   const router = useRouter();
+  const [isScroll, setIsScroll] = useState(false);
+  console.log(isScroll)
+
+  const handleChangeBgOnScroll = () => {
+    if (window.scrollY >= 50) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleChangeBgOnScroll);
+    return () => {
+      window.removeEventListener('scroll', handleChangeBgOnScroll);
+    }
+  }, [])
 
   return (
-    <div className='flex justify-between items-center h-[100px] px-[200px] bg-transparent'>
+    <div className='fixed top-0 left-0 right-0 flex justify-between items-center h-[100px] px-[200px]'
+      style={{
+        backgroundColor: isScroll ? 'rgba(255, 255, 255, 0.6)' : 'transparent',
+        backdropFilter: isScroll ? 'blur(4px)' : 'none',
+        transition: 'all 0.5s ease'
+      }}
+    >
       {/* Logo */}
       <div
         onClick={() => {
