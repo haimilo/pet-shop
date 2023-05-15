@@ -43,7 +43,7 @@ const Header = () => {
   }, [])
 
   return (
-    <div className='fixed top-0 left-0 right-0 flex justify-between items-center h-[100px] px-[200px]'
+    <div className='fixed top-0 left-0 right-0 flex justify-between items-center h-[100px] px-[200px] z-[1000]'
       style={{
         backgroundColor: isScroll ? 'rgba(255, 255, 255, 0.6)' : 'transparent',
         backdropFilter: isScroll ? 'blur(4px)' : 'none',

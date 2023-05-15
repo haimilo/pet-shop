@@ -9,7 +9,7 @@ const SinglePetProduct = (props: ISinglePetProduct) => {
 
   return (
     <div
-      className='flex flex-col w-[280px] items-center cursor-pointer hover:scale-[1.1] transition duration-300 ease-in-out'
+      className='flex flex-col w-[280px] items-center justify-self-center cursor-pointer hover:scale-[1.1] transition duration-300 ease-in-out'
     >
       {/* Image */}
       <div

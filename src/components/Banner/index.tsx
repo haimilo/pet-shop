@@ -1,32 +1,42 @@
 import React from 'react'
 import Image from 'next/image'
 
-const SliderCarousel = () => (
-  <>
+const Banner = () => {
+  return (
     <div
-      className='flex min-h-screen px-[200px] pt-[100px] h-[695px]'
+      className='flex h-[378px] px-[86px] mx-[130px] mb-[120px] rounded-3xl items-center justify-center'
       style={{
-        backgroundImage: 'url(/image/herroBanner.png)',
+        backgroundImage: 'url(/image/Banner.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
       <div
-        className='flex-1 pt-[80px]'
+        className='flex-1'
+        style={{
+          backgroundImage: 'url(/image/peopleAndPug.png)',
+          backgroundPosition: 'bottom',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: '100%',
+        }}
+      />
+      <div
+        className='flex-1 flex items-end py-16 h-full flex-col'
       >
         <h1
-          className='text-[56px] leading-[68px] font-bold text-[#002A48] mb-1'
+          className='text-[52px] leading-[68px] font-bold text-[#002A48]'
         >
           One More Friend
         </h1>
         <h3
-          className='text-[40px] leading-[60px] font-bold text-[#002A48] mb-6'
+          className='text-[36px] leading-[54px] font-bold text-[#002A48]'
         >
           Thousands More Fun!
         </h3>
         <p
-          className='mb-9 text-[16px] text-justify leading-7 w-[480px]'
+          className='mb-6 text-[12px] text-right leading-[18px] w-[400px]'
         >
           Having a pet means you have more joy, anew friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
         </p>
@@ -56,19 +66,8 @@ const SliderCarousel = () => (
           </button>
         </div>
       </div>
-      <div
-        className='flex-3'
-        style={{
-          backgroundImage: 'url(/image/peopleAndDog.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          width: '100%',
-          height: '100%',
-        }}
-      />
     </div>
-  </>
-)
+  )
+}
 
-export default SliderCarousel
+export default Banner
